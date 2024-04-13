@@ -11,7 +11,15 @@
 <p> </p>
 <p> </p>
 
-
+# Introdução
+Nesse Documento será apresentado:
+- O trabalho Proposto:  [Proposto](#proposto)
+- O MinMax1: [MinMax1](#minmax1)
+- O MinMax2: [MinMax2](#minmax2)
+- O MinMax3: [MinMax3](#minmax3)
+- A Saída: [Saida](#saida)
+- A Conclusão: [Conclusão](#conclusão)
+- A Compilação e Execução: [Compilação e Execução](#compilação-e-execução)
 ## Proposto
 <p align="justify">
 1. **Implementação dos Algoritmos**
@@ -30,42 +38,60 @@
     - Subir o código desenvolvido para um repositório Git.
     - No arquivo README.md, detalhar os experimentos realizados e relacioná-los com os conceitos de análise assintótica discutidos em sala.
 
-<p align="center">
-<img src="imagens/input.png"/> 
-</p>
+<h2 align="center"/> Código </h2>
 
-<p align="justify">
-	Nessa Figura 1 é possivel ver como seria a entrada correta do programa.
-</p>
+## MinMax1
+O algoritimo MinMax1, apresentado abaixo, possui um custo computacional de 2n. Uma vez que apresenta um for que passa pelo vetor inteiro e dentro dele doi IF, os quais realizam duas verificações condicionais para descobrir o valor maximo e minimo. Dessa forma não importa o caso o custo computacional será O(n).
 
 <p align="center">
-<img src="imagens/output.png"/> 
+<img src="https://github.com/serginnn/TrabalhoMInMax/assets/150479320/a6a4c245-f06f-4de3-9d5d-d2ed9cdd01f2"/> 
 </p>
 
-<p align="justify">
-	Nessa Figura 2 é possivel ver como seria a saida para a entrada da matriz da primiera figura.
-</p>
-
-# Regras
-<p align="justify">
-	As Regras do jogo são:<br/>
-	- Uma célula viva com menos de dois vizinhos vivos morre (solidão).<br/>
-	- Uma célula viva com mais de três vizinhos vivos morre (superpopulação).<br/>
-	- Uma célula viva com dois ou três vizinhos vivos sobrevive.<br/>
-	- Uma célula morta com exatamente três vizinhos vivos se torna viva (reprodução).<br/>
-
-	Sendo que os vizinhos são considerados todas as casas ao redor da célula, inclusive na sua diagonal.
-</p>
+## MinMax2
+O algoritimo MinMax2, apresentado abaixo, é constituido por uma estrutura FOR que percorre o vetor por completo e duas estruturas condicionais(IF e ELSE IF), para descobrir o minimo e o maximo valor que constitui no vetor. Assim sendo seu custo computacional varia conforme é necessario a utilização das estruturas condicionais. Portanto quando apenas uma estrutura é ativada o custo computacional passa a ser O(n), sendo n o tamanho do vetor. Quando uma estrutura é ativada com todos os elementos do vetores passando por ela e a outra estrutura é ativada com apenas metade dos elementos passando por ela, tem-se o custo computacional de (3n/2). Quando todos os elementos de n são passados nas duas estruturas condicionais, tem-se o pior caso possivel 2n.
 
 <p align="center">
-<img src="imagens/FuncionamentoJogo.png"/> 
+<img src="https://github.com/serginnn/TrabalhoMInMax/assets/150479320/4fc0eed2-34f4-4466-a72a-4befc30aa550"/> 
 </p>
 
-<p align="justify">
-	Nessa Figura 3 é possivel se ter uma ideia de como o jogo funciona.
+## MinMax3
+O algoritimo MinMax3, apresentado abaixo, é um algoritimo mais complexo em que os elementos são analisados em pares. Sendo assim o custo computacional é (n/2), uma vez que se entraram no IF os dados não entraram no else, dessa forma quando os dados entrarem no ELSe eles não entraram no IF mantendo o custo computacional em (n/2). Portando seu custo computacional se mantera constante, sendo 3n/2 o pior, o caso medio e o melhor caso desse codigo.
+
+<p align="center">
+<img src="https://github.com/serginnn/TrabalhoMInMax/assets/150479320/3b29ba4d-7117-4a74-90b3-96c9e9e9d106"/> 
 </p>
 
+# Saida
 
+Para realizar a saída dos tempos médios de execução, foi necessário executar cada tamanho de vetor 10 vezes para cada tipo de implementação MinMax, tempos esses medidos com a utilização da biblioteca 'ctime'. Para isso foi realizada a função abaixo que calcula o tempo para cada vez que o MinMax é executado, retornando assim a média. 
+
+<p align="center">
+<img src="https://github.com/serginnn/TrabalhoMInMax/assets/150479320/456d1c8c-32f2-490e-9746-e550065f1007"/> 
+</p>
+
+Para a saída do vetor crescente foi realizado o mesmo procedimento porém com o acréscimo da biblioteca 'algorithm', uma vez que o vetor é preenchido inicialmente com valores aleatorios pela bbiblioteca 'random'. Assim pela função sort() realizou a ordenação do vetor e suas 10 execuções subsequentes.
+
+<p align="center">
+<img src="https://github.com/serginnn/TrabalhoMInMax/assets/150479320/f5891831-23c4-414a-827a-88f94e309aa9"/> 
+</p>
+
+Por último foi realizado a inversão do vetor, colocando ele em ordem decrescente com a utilização da mesma biblioteca.
+
+<p align="center">
+<img src="https://github.com/serginnn/TrabalhoMInMax/assets/150479320/8e9bc956-97db-44e2-81ae-9bc45500e1fc"/> 
+</p>
+
+Após as diferentes formas de execução e implementação. Os resultados foram impressos para comparação no arquivo "Out.mps".
+
+<p align="center">
+<img src="https://github.com/serginnn/TrabalhoMInMax/assets/150479320/9c125d3a-bda2-4e51-982e-31084eae0ac8"/> 
+</p>
+
+# Conclusão
+Com a realização desse Trabalho pode-se concluir que apesar dos diferentes tempos de execução para diferentes modelos de máquinas e ambientes:
+ - O MinMax3 teve o melhor desempenho para os vetores ordenados crescentemente e decrescentemente.
+ - O MinMax1 teve o melhor desempenho para os vetores aleatorios.
+ - O MinMax2 no geral se manteve constante sendo um caso intermediário. 
 
 # Compilação e Execução
 
